@@ -94,11 +94,13 @@ def get_text(xpath, alt):
 
 """MAIN"""
 # uhhh
-if not os.path.exists("links.txt"):
+if os.path.exists("links.txt"):
     with open("links.txt", "r") as lfile, open("done.txt", "r") as dfile:
         lf_length = len(lfile)
         if dfile.readline() == "0":
             gather_links(lf_length)
+else:
+    gather_links()
     
 
 # get link from file

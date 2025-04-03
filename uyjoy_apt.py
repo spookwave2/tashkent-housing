@@ -120,7 +120,7 @@ prices = df["Price"].tolist()
 rooms = df["Rooms"].tolist()
 sqms = df["Area"].tolist()
 floors = df["Floor"].tolist()
-b_floors = df["Building floors"].tolist()
+b_floors = df["Building Floors"].tolist()
 conditions = df["Condition"].tolist()
 styles = df["Style"].tolist()
 provinces = df["Province"].tolist()
@@ -203,7 +203,7 @@ for link in flat_links:
             "Rooms": rooms,
             "Area": sqms,
             "Floor": floors,
-            "Building floors": b_floors,
+            "Building Floors": b_floors,
             "Condition": conditions,
             "Style": styles,
             "Province": provinces,
@@ -223,7 +223,7 @@ df = pd.DataFrame(
         "Rooms": rooms,
         "Area": sqms,
         "Floor": floors,
-        "Building floors": b_floors,
+        "Building Floors": b_floors,
         "Condition": conditions,
         "Style": styles,
         "Province": provinces,

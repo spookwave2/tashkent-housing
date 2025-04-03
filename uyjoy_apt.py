@@ -37,7 +37,7 @@ def gather_links(s_point=1):
             while page_count < s_point:
                 print(f"Page {page_count}.")
                 button_next = WebDriverWait(driver, 20).until(expected_conditions.presence_of_element_located((By.XPATH, "//button[@class='btn-next']")))
-                button.click()
+                button_next.click()
                 page_count += 1
 
         # pretty print stuff again

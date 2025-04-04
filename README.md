@@ -8,12 +8,12 @@ it's the processing code used to collect info about houses from uy-joy.uz
 ## uybor.py
 it's the processing code used to collect info about houses from uybor.uz
 
-## uyjoy_apt_raw.csv
+### uyjoy_apt_raw.csv
 
-## uyjoy_house_raw.csv
+### uyjoy_house_raw.csv
 
-## uybor_apt_raw.csv
+### uybor_apt_raw.csv
 
-## uybor_house_raw.csv
+### uybor_house_raw.csv
 
 # Credits to: Me, Myself and I

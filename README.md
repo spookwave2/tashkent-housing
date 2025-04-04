@@ -1,19 +1,15 @@
 # tashkent-housing
 Data about Tashkent house prices from various Uzbek websites. with raw data, cleaned data, and processing code.  
 
-## uyjoy_apt.py
-it's the processing code used to collect info about apartments from uy-joy.uz
-## uyjoy_house.py
-it's the processing code used to collect info about houses from uy-joy.uz
-## uybor.py
-it's the processing code used to collect info about houses from uybor.uz
+## Processing code
+### uyjoy_apt.py
+### uyjoy_house.py
+### uybor.py
 
+## Data
 ### uyjoy_apt_raw.csv
-
 ### uyjoy_house_raw.csv
-
 ### uybor_apt_raw.csv
-
 ### uybor_house_raw.csv
 
 # Credits to: Me, Myself and I

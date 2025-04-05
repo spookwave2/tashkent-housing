@@ -16,17 +16,18 @@ tprint("START", font="tarty1")
 link_filename = "uybor_links_house.txt"
 temp_csv_filename = "uybor_house_temp.csv"
 final_csv_filename = "uybor_house.csv"
-status_filename = "ub_house_status.txt"
+status_filename = "ub_status.txt"
 
 # Initialize Options
 chrome_options = Options()
 
 # preferences
 prefs = {
-    "profile.managed_default_content_settings.images": 2, # Block images
-    "profile.managed_default_content_settings.media_stream": 2,  # Block microphone and camera (often used for video/audio input)
-    "profile.managed_default_content_settings.plugins": 2,   # Block plugins (can include Flash, which some older ads/videos might use)
-    "profile.managed_default_content_settings.autoplay": 2  # Block autoplay of media
+    "profile.managed_default_content_settings.images": 2,          # Block images
+    "profile.managed_default_content_settings.media_stream": 2,   # Block microphone and camera (often used for video/audio input)
+    "profile.managed_default_content_settings.plugins": 2,        # Block plugins (can include Flash, which some older ads/videos might use)
+    "profile.managed_default_content_settings.autoplay": 2,       # Block autoplay of media
+    "profile.managed_default_content_settings.stylesheets": 2    # Block CSS
 }
 chrome_options.add_experimental_option("prefs", prefs)
 
@@ -273,7 +274,7 @@ for link in links:
     printm(f"Price: \t\t{price}")
     prices.append(price)
 
-    sqm = get_text("//div[@class='MuiTypography-root MuiTypography-overline mui-style-1xqesu' and contains(text(), 'Площадь')]/following-sibling::div", alt="None")
+    sqm = get_text("//div[@class='MuiTypography-root MuiTypography-overline mui-style-1xqesu' and text()='Площадь']/following-sibling::div", alt="None")
     printm(f"sqm: \t\t\t{sqm}")
     sqms.append(sqm)    
 
@@ -281,7 +282,7 @@ for link in links:
     printm(f"Land Area: \t\t{land}")
     lands.append(land)    
 
-    room_amount = get_text("//div[@class='MuiTypography-root MuiTypography-overline mui-style-1xqesu' and contains(text(), 'Комнат')]/following-sibling::div", alt="None")
+    room_amount = get_text("//div[@class='MuiTypography-root MuiTypography-overline mui-style-1xqesu' and text()='Комнат']/following-sibling::div", alt="None")
     printm(f"Rooms: \t\t{room_amount}")
     rooms.append(room_amount)
 
@@ -387,7 +388,7 @@ for link in links:
     # Using list comprehension and slicing
     result_lists = [facilities_list[i:i+3] for i in range(0, len(facilities_list), 3)]
     print_lists(result_lists)
-        
+
     # save progress every 50 links
     if link_count % 50 == 0:
         df = pd.DataFrame(
